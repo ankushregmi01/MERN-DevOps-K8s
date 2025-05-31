@@ -1,6 +1,6 @@
 pipeline { 
     agent any
-    ENVIRONMENT {
+    environment {
         SONARQUBE_ENV = 'Sonar'
     }
     stages {
@@ -15,10 +15,10 @@ pipeline {
                 echo "running Sonarqube analysis..."
                 withSonarQubeEnv('Sonar') {
                     sh '''
-                    SONAR_HOME/bin/sonar-scanner \
+                    sonar-scanner \
                     -Dsonar.projectName=Mern-Project \
-                    -Dsnar.projectkey=mern-project \
-                    -Dsonar.sources-. 
+                    -Dsonar.projectkey=mern-project \
+                    -Dsonar.sources=. 
                     '''
                 }
             }
@@ -32,7 +32,7 @@ pipeline {
             }
         }
         stage("deploy") {
-            stps {
+            steps {
                 sh 'docker compose up -d'
             }
         }
