@@ -17,7 +17,7 @@ pipeline {
                     sh '''
                     sonar-scanner \
                     -Dsonar.projectName=Mern-Project \
-                    -Dsonar.projectkey=mern-project \
+                    -Dsonar.projectKey=mern-project \
                     -Dsonar.sources=. 
                     '''
                 }
