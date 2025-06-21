@@ -17,7 +17,7 @@ export default function Record() {
       if(!id) return;
       setIsNew(false);
       const response = await fetch(
-        `http://backend:5050/record/${params.id.toString()}`
+        `${process.env.REACT_APP_API_URL}/record/${params.id.toString()}`
       );
       if (!response.ok) {
         const message = `An error has occurred: ${response.statusText}`;

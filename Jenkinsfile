@@ -27,7 +27,7 @@ pipeline {
             steps {
                 echo "Waiting for Sonarqube quality gate..."
                 timeout(time: 4, unit: 'MINUTES') {
-                    waitForQualityGate abortPipeline: False
+                    waitForQualityGate abortPipeline: false
                 }
             }
         }

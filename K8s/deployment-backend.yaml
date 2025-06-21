@@ -22,24 +22,4 @@ spec:
           env:
             - name: MONGO_URI
               value: mongodb://mongodb:27017
-            - name: NODE_ENV
-              value: "production"
-          resources:
-            requests:
-              memory: "128Mi"
-              cpu: "100m"
-            limits:
-              memory: "256Mi"
-              cpu: "200m"
-          readinessProbe:
-            httpGet:
-              path: /health
-              port: 5050
-            initialDelaySeconds: 5
-            periodSeconds: 10
-          livenessProbe:
-            httpGet:
-              path: /health
-              port: 5050
-            initialDelaySeconds: 15
-            periodSeconds: 20
+   
