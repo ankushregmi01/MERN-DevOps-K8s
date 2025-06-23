@@ -10,7 +10,6 @@ spec:
     - host: app.local
       http:
         paths:
-          # Backend API rule with rewrite
           - path: /api(/|$)(.*)
             pathType: ImplementationSpecific
             backend:
@@ -30,8 +29,6 @@ spec:
                 name: backend
                 port:
                   number: 5050
-
-          # Frontend rule — no rewrite
           - path: /
             pathType: Prefix
             backend:
