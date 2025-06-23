@@ -14,9 +14,9 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: ankushregmigg/frontend:v1
+          image: ankushregmigg/frontend:v2
           ports:
-            - containerPort: 80
+            - containerPort: 5173
           env:
             - name: REACT_APP_BACKEND_URL
-              value: "http://backend:5050"
+              value: "/api"
